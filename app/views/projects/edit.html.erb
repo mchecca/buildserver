@@ -1,0 +1,17 @@
+<h1>Edit Project: <%= @project.name %></h1>
+
+<%= form_with(model: @project, local: true) do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %><br>
+    <%= form.label :git_clone_url %><br>
+    <%= form.text_field :git_clone_url %><br>
+    <%= form.label :Script %><br>
+    <%= form.text_area :script %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+<%= link_to 'Cancel', project_path(@project) %>

@@ -1,0 +1,16 @@
+<h1>New Project</h1>
+
+<%= form_with scope: :project, url: projects_path, local: true do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %><br>
+    <%= form.label :git_clone_url %><br>
+    <%= form.text_field :git_clone_url %><br>
+    <%= form.label :Script %><br>
+    <%= form.text_area :script %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

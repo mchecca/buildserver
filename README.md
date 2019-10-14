@@ -1,24 +1,23 @@
-# README
+# Buildserver
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A sample Ruby on Rails app for a very basic build server
 
-Things you may want to cover:
+## Setup
+```bash
+rake db:setup
+docker-compose up -d postgres
+rails server
+```
 
-* Ruby version
+## Running
 
-* System dependencies
+### Create a new project
 
-* Configuration
+Create a new project with the following params:
 
-* Database creation
+* Name: Buildserver
+* Git clone URL: https://github.com/mchecca/buildserver.git
+* Script: ls
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Navigate to the project url: `http://127.0.0.1:3000/projects/1` and click "Build".
+You should be redirected to the list of builds

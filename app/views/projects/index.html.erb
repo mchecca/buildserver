@@ -1,0 +1,26 @@
+<h1>Projects List</h1>
+
+<% if @projects.count == 0 %>
+<p>No projects available!</p>
+<% else %>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Git URL</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        <% @projects.each do |project| %>
+            <tr>
+                <td><%= project.name %></td>
+                <td><%= project.git_clone_url %></td>
+                <td><%= link_to 'Show', project_path(project) %></td>
+            </tr>
+        <% end %>
+        </tbody>
+    </table>
+<% end %>
+
+<p><%= link_to 'Create Project', new_project_path %></p>

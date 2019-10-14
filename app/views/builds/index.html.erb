@@ -1,0 +1,26 @@
+<h1>Builds for <% @project.name %></h1>
+
+<% if @builds.count == 0 %>
+<p>No builds available!</p>
+<% else %>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Success</th>
+                <th>Output</th>
+            </tr>
+        </thead>
+        <tbody>
+        <% @builds.each do |build| %>
+            <tr>
+                <td><%= build.id %></td>
+                <td><%= build.success %></td>
+                <td><%= build.output %></td>
+            </tr>
+        <% end %>
+        </tbody>
+    </table>
+<% end %>
+
+<p><%= link_to 'Back', project_path(@project.id) %></p>

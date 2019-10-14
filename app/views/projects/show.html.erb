@@ -1,0 +1,12 @@
+<h1>Project: <%= @project.name %></h1>
+<%= link_to 'Edit', edit_project_path(@project) %>
+<p>Git URL: <%= @project.git_clone_url %></p>
+<p>Script: <br><textarea readonly="true"><%= @project.script %></textarea></p>
+
+<%= form_with scope: :project, url: build_project_build_path(@project.id), local: true do |form| %>
+    <%= form.submit 'Build' %>
+<% end %>
+<br>
+<%= link_to 'View Builds', project_builds_path(@project.id) %>
+<br><br>
+<%= link_to 'All Projects', projects_path %>

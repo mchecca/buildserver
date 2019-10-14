@@ -51,6 +51,7 @@ GEM
     concurrent-ruby (1.1.5)
     crass (1.0.4)
     erubi (1.9.0)
+    fileutils (1.3.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     i18n (1.7.0)
@@ -128,6 +129,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.1.0)
   byebug
+  fileutils
   jbuilder (~> 2.5)
   pg (>= 0.18, < 2.0)
   rails (~> 5.2.3)
